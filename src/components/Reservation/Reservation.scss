@@ -1,0 +1,142 @@
+@use '../../styles/variables' as *;
+
+.reservation {
+  background: $warm-white;
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+
+    @media (max-width: $bp-desktop) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__content {
+    .label {
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    > p {
+      color: $chocolate;
+      margin-bottom: 2.5rem;
+      max-width: 360px;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    span {
+      font-size: $text-sm;
+      color: $chocolate;
+    }
+  }
+
+  &__detail-label {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $bronze;
+  }
+
+  // Form
+  &__form {
+    background: $canvas;
+    padding: 2.5rem;
+    border: 1px solid $sand;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  &--3 {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $chocolate;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: $font-body;
+    font-size: $text-sm;
+    color: $text;
+    background: $warm-white;
+    border: 1px solid $sand;
+    padding: 0.85rem 1rem;
+    transition: border-color $duration-fast $ease-smooth;
+    outline: none;
+    width: 100%;
+
+    &::placeholder {
+      color: rgba($chocolate, 0.4);
+    }
+
+    &:focus {
+      border-color: $bronze;
+    }
+  }
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%234A3A30' stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+}
