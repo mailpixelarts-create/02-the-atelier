@@ -1,0 +1,129 @@
+@use '../../styles/variables' as *;
+
+.bakery {
+  background: $warm-white;
+  overflow: hidden;
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @media (max-width: $bp-desktop) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__images {
+    position: relative;
+    height: 600px;
+
+    @media (max-width: $bp-desktop) {
+      height: 400px;
+    }
+  }
+
+  &__image-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 80%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image-side {
+    position: absolute;
+    overflow: hidden;
+    border: 4px solid $warm-white;
+
+    &--1 {
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: 45%;
+    }
+
+    &--2 {
+      top: 10%;
+      right: 5%;
+      width: 35%;
+      height: 30%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__story {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: $text-3xl;
+      color: $dark-coffee;
+    }
+
+    p {
+      font-size: $text-base;
+      line-height: 1.8;
+      color: $chocolate;
+    }
+  }
+
+  &__details {
+    display: flex;
+    gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid $sand;
+
+    @media (max-width: $bp-mobile) {
+      gap: 2rem;
+    }
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__detail-number {
+    font-family: $font-display;
+    font-size: $text-3xl;
+    font-weight: 400;
+    color: $bronze;
+    line-height: 1;
+  }
+
+  &__detail-label {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $chocolate;
+  }
+}

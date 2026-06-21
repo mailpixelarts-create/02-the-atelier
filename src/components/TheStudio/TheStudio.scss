@@ -1,0 +1,97 @@
+@use '../../styles/variables' as *;
+
+.studio {
+  background: $canvas;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 5rem;
+
+    .label {
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 500px;
+      margin: 0 auto;
+      color: $chocolate;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+}
+
+.studio-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+
+  &--right {
+    direction: rtl;
+
+    > * {
+      direction: ltr;
+    }
+  }
+
+  @media (max-width: $bp-desktop) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    &--right {
+      direction: ltr;
+    }
+  }
+
+  &__image {
+    height: 450px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: $bp-tablet) {
+      height: 300px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+  &__number {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    letter-spacing: 0.15em;
+    color: $bronze;
+  }
+
+  h3 {
+    font-family: $font-display;
+    font-size: $text-2xl;
+    color: $dark-coffee;
+  }
+
+  p {
+    font-size: $text-base;
+    line-height: 1.8;
+    color: $chocolate;
+    max-width: 420px;
+  }
+}

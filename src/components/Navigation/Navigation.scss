@@ -1,0 +1,212 @@
+@use '../../styles/variables' as *;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  z-index: $z-nav;
+  transition: all $duration-base $ease-smooth;
+
+  &--scrolled {
+    padding: 1rem 0;
+    background: rgba($canvas, 0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid $sand;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    text-decoration: none;
+  }
+
+  &__logo-main {
+    font-family: $font-display;
+    font-size: $text-lg;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: $dark-coffee;
+    text-transform: uppercase;
+  }
+
+  &__logo-sub {
+    font-family: $font-caption;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: $bronze;
+    margin-top: -2px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+
+    @media (max-width: $bp-desktop) {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $chocolate;
+    position: relative;
+    padding: 0.25rem 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $bronze;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform $duration-base $ease-smooth;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    &:hover {
+      color: $dark-coffee;
+    }
+  }
+
+  // Burger
+  &__burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    z-index: $z-modal + 1;
+
+    @media (max-width: $bp-desktop) {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: $dark-coffee;
+      transition: all $duration-base $ease-smooth;
+      transform-origin: center;
+    }
+
+    &--open {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -4px);
+      }
+    }
+  }
+
+  // Full-screen menu
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: $canvas;
+    z-index: $z-nav;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all $duration-slow $ease-smooth;
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__menu-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__menu-link {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    opacity: 0;
+    text-decoration: none;
+
+    &:hover {
+      .nav__menu-link-text {
+        color: $bronze;
+      }
+    }
+  }
+
+  &__menu-link-number {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    color: $bronze;
+    letter-spacing: 0.1em;
+  }
+
+  &__menu-link-text {
+    font-family: $font-display;
+    font-size: $text-4xl;
+    color: $dark-coffee;
+    transition: color $duration-fast $ease-smooth;
+
+    @media (max-width: $bp-tablet) {
+      font-size: $text-3xl;
+    }
+  }
+
+  &__menu-footer {
+    display: flex;
+    gap: 4rem;
+    text-align: center;
+  }
+
+  &__menu-info,
+  &__menu-hours {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+    color: $chocolate;
+  }
+}

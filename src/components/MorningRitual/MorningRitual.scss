@@ -1,0 +1,183 @@
+@use '../../styles/variables' as *;
+
+.morning-ritual {
+  background: $canvas;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 5rem;
+
+    .label {
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__subtitle {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: $text-lg;
+    color: $chocolate;
+  }
+
+  &__timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  &__timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: $sand;
+    transform-origin: top;
+    transform: translateX(-50%);
+  }
+}
+
+.ritual-stage {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--left {
+    .ritual-stage__content {
+      flex-direction: row;
+      padding-right: calc(50% + 3rem);
+      text-align: right;
+    }
+
+    .ritual-stage__text {
+      align-items: flex-end;
+    }
+
+    .ritual-stage__dot {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &--right {
+    .ritual-stage__content {
+      flex-direction: row-reverse;
+      padding-left: calc(50% + 3rem);
+    }
+
+    .ritual-stage__dot {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $bronze;
+    border: 2px solid $canvas;
+    z-index: 2;
+  }
+
+  &__time {
+    position: absolute;
+    top: -1.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: $font-caption;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: $bronze;
+    white-space: nowrap;
+  }
+
+  &__content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  &__image {
+    width: 200px;
+    height: 260px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 2px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+
+    h3 {
+      font-family: $font-display;
+      font-size: $text-2xl;
+      color: $dark-coffee;
+    }
+
+    p {
+      font-size: $text-sm;
+      line-height: 1.7;
+      color: $chocolate;
+      max-width: 300px;
+    }
+  }
+
+  // Mobile
+  @media (max-width: $bp-desktop) {
+    &--left,
+    &--right {
+      .ritual-stage__content {
+        flex-direction: column !important;
+        padding-left: 2.5rem !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+      }
+
+      .ritual-stage__text {
+        align-items: flex-start;
+      }
+    }
+
+    &__dot {
+      left: 0 !important;
+      transform: none !important;
+    }
+
+    &__timeline-line {
+      left: 0 !important;
+      transform: none !important;
+    }
+
+    &__image {
+      width: 100%;
+      height: 200px;
+    }
+
+    &__text p {
+      max-width: 100%;
+    }
+  }
+}

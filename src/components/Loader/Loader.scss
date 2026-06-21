@@ -1,0 +1,77 @@
+@use '../../styles/variables' as *;
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: $canvas;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $z-loader;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__logo {
+    width: 200px;
+    height: 80px;
+  }
+
+  &__logo-text {
+    font-family: $font-display;
+    font-size: 16px;
+    letter-spacing: 0.3em;
+  }
+
+  &__tagline {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $bronze;
+    opacity: 0;
+  }
+
+  &__progress {
+    width: 120px;
+    height: 1px;
+    background: $sand;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+
+  &__progress-bar {
+    width: 100%;
+    height: 100%;
+    background: $bronze;
+    transform-origin: left;
+  }
+
+  &__particles {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 150px;
+    pointer-events: none;
+  }
+
+  &__particle {
+    position: absolute;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background: $bronze;
+    border-radius: 50%;
+    opacity: 0;
+    animation: aromaRise 2.5s ease-out infinite;
+  }
+}

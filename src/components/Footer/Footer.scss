@@ -1,0 +1,121 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  background: $dark-coffee;
+  color: $canvas;
+  padding: 4rem 0 2rem;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+
+    @media (max-width: $bp-desktop) {
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__logo {
+    font-family: $font-display;
+    font-size: $text-xl;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: $canvas;
+  }
+
+  &__tagline {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $bronze;
+  }
+
+  &__columns {
+    display: flex;
+    gap: 4rem;
+
+    @media (max-width: $bp-tablet) {
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h4 {
+      font-family: $font-caption;
+      font-size: $text-xs;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $bronze;
+      margin-bottom: 0.5rem;
+    }
+
+    p,
+    a {
+      font-size: $text-sm;
+      color: rgba($canvas, 0.7);
+      line-height: 1.6;
+      transition: color $duration-fast $ease-smooth;
+    }
+
+    a:hover {
+      color: $canvas;
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background: rgba($canvas, 0.15);
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__credit {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    letter-spacing: 0.1em;
+    color: rgba($canvas, 0.5);
+    text-transform: uppercase;
+  }
+
+  &__copyright {
+    font-family: $font-caption;
+    font-size: $text-xs;
+    color: rgba($canvas, 0.4);
+    letter-spacing: 0.05em;
+
+    a {
+      color: $bronze;
+
+      &:hover {
+        color: $canvas;
+      }
+    }
+  }
+}

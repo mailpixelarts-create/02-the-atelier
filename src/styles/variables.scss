@@ -1,0 +1,80 @@
+// ============================================
+// THE ATELIER — Design Tokens
+// ============================================
+
+// Colors
+$canvas: #F8F4EE;
+$warm-white: #FCFAF8;
+$sand: #E7DED2;
+$dark-coffee: #2C241F;
+$chocolate: #4A3A30;
+$bronze: #A27B5C;
+$muted-olive: #8C9074;
+$text: #202020;
+$white: #FFFFFF;
+$overlay: rgba(44, 36, 31, 0.85);
+
+// Typography
+$font-display: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
+$font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-caption: 'IBM Plex Mono', 'Courier New', monospace;
+
+// Font Sizes
+$text-xs: clamp(0.625rem, 0.6rem + 0.125vw, 0.75rem);
+$text-sm: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+$text-base: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+$text-lg: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+$text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+$text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+$text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+$text-4xl: clamp(2.5rem, 1.8rem + 3.5vw, 5rem);
+$text-5xl: clamp(3rem, 2rem + 5vw, 7rem);
+$text-hero: clamp(3.5rem, 2.5rem + 5vw, 8rem);
+
+// Spacing
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-2xl: 3rem;
+$space-3xl: 4rem;
+$space-4xl: 6rem;
+$space-5xl: 8rem;
+$space-section: clamp(6rem, 4rem + 8vw, 12rem);
+
+// Layout
+$container-max: 1400px;
+$container-narrow: 900px;
+$container-padding: clamp(1.5rem, 1rem + 3vw, 4rem);
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+$bp-wide: 1440px;
+
+// Transitions
+$ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+$duration-fast: 0.2s;
+$duration-base: 0.4s;
+$duration-slow: 0.8s;
+$duration-slower: 1.2s;
+
+// Borders
+$border-thin: 1px solid $sand;
+$border-dark: 1px solid $dark-coffee;
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(44, 36, 31, 0.06);
+$shadow-md: 0 4px 12px rgba(44, 36, 31, 0.08);
+$shadow-lg: 0 8px 30px rgba(44, 36, 31, 0.12);
+
+// Z-index
+$z-cursor: 9999;
+$z-loader: 9998;
+$z-nav: 100;
+$z-overlay: 50;
+$z-modal: 200;
